@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/css/carrito.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>TheGameStore</title>
+  </head>
+<body>
+  <%- include('./partials/header') %>
+  <main></main>
+  <h1>Carrito de compras</h1>
+
+  <% if (products.length > 0) { %>
+    <div class="products">
+      <% products.forEach(product => { %>
+        <div class="product">
+          <img src="img/<%= product.image %>" alt="<%= product.name %>">
+          <div class="details">
+            <h2><%= product.name %></h2>
+            <p>Precio: $<%= product.price %></p>
+            <p>Cantidad: <%= product.quantity %></p>
+            <form action="/cart/remove/<%= product.id %>" method="POST">
+              <button class="btn-delete" type="submit">Eliminar</button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    <div class="total">
+      <h2>Total: $<%= total %></h2>
+      
+      <button class="btn-checkout" onclick="checkout()">Pagar</button>
+    </div>
+  <% } else { %>
+    <p>No hay productos en el carrito.</p>
+  <% } %>
+</main>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('./partials/footer') %>
+</html>

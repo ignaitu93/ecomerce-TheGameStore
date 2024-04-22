@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/css/styles1.css" type="text/css" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>TheGameStore</title>
+  </head>
+
+  <body>
+    <%- include('./partials/header') %>
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Main content -->
+    <main class="container">
+      <div class="product-name">
+          <h1><%= product.name %></h1>
+      </div>
+  
+      <section class="content">
+          <article class="gallery">
+              <div class="gallery__image-container">
+                  <img src="/img/<%= product.image %>" alt="Product Image">
+              </div>
+          </article>
+  
+          <article class="details">
+              <div class="details__description">
+                  <h2 class="description-header">Descripción</h2>
+                  <p class="description-text"><%= product.description %></p>
+              </div>
+              <div class="service">
+                <p><i class="fa-solid fa-tags"></i> Categoría: <%= product.Categoria ? product.Categoria.nombre : 'Sin categoría' %></p>
+                  <p><i class="fa-solid fa-shield-halved"></i> Garantía - 12 meses</p>
+                  <p><i class="price">$ <%= product.price %> </p>
+                  <p><i class="fa-solid fa-check"></i> Stock disponible: <span class="stock <%= product.stock < 1 ? 'out-of-stock' : '' %>"><%= product.stock %></span></p>
+                  <p><i class="fa-solid fa-cart-shopping"></i> Envíos a todo el país</p>
+                  <form action="/cart/add" method="post">
+                    <input type="hidden" name="productId" value="<%= productId %>">
+                    <button class="add-to-cart-button" type="submit">Agregar al carrito</button>
+                  </form>
+                </div>
+          </article>
+      </section>
+  </main>
+    
+    
+    
+  
+  
+      
+      
+    
+        
+            
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->          
+
+    <!-- Footer -->
+
+    
+    <%- include('./partials/footer') %>
+
+  </body>
+</html>

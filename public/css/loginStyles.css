@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  background-color: white;
+  padding-bottom: 15px;
+}
+
+#login   {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 300px;
+  height: auto; /* Cambiado a 'auto' para que se ajuste según el contenido */
+  background-color: lightgrey;
+  padding: 10px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+#email {
+  width: 95%;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-inline-start: 5%;
+}
+
+#password {
+  width: 95%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding-inline-start: 5%;
+}
+
+#inicio {
+  width: 50%;
+  height: 30px;
+  margin: auto;
+}
+
+#signUp, #resetPass {
+  text-align: center;
+  color: black;
+  margin-top: 15px;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+}
+#rememberMeContainer {
+  display: flex;
+  align-items: center; 
+  margin-top: 10px; 
+}
+
+#rememberMe {
+  margin-right: 5px; 
+}
+
+#rememberMeText {
+  font-size: 14px;
+}

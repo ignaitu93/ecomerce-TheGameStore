@@ -1,0 +1,127 @@
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-name {
+  margin-bottom: 20px;
+}
+
+.product-name h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+.product-name h1 {
+  font-size: 24px;
+  color: #222;
+  margin-top: 10px;
+}
+
+.content {
+  display: flex; /* Usar flexbox */
+}
+
+.gallery,
+.details {
+  flex: 1; /* Cada sección ocupa el 50% del ancho */
+  margin-right: 20px; /* Agrega un espacio entre las secciones */
+}
+
+/* Eliminar el margen derecho del último elemento */
+.details:last-child {
+  margin-right: 0;
+}
+
+.gallery__image-container img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.details__description {
+  margin-top: 20px;
+}
+
+.details__description h2 {
+  font-size: 24px; /* Aumentar el tamaño del encabezado */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details__description p {
+  font-size: 20px; /* Aumentar el tamaño del texto */
+  color: #555;
+}
+
+.service {
+  margin-top: 20px;
+}
+
+.service p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.stock {
+  color: #38bf36;
+}
+
+.out-of-stock {
+  color: #ff0000;
+}
+
+.add-to-cart-button {
+  background-color: #4CAF50; /* Color de fondo */
+  border: none; /* Sin borde */
+  color: white; /* Color del texto */
+  padding: 15px 32px; /* Padding */
+  text-align: center; /* Alineación de texto */
+  text-decoration: none; /* Sin decoración de texto */
+  display: inline-block; /* Mostrar como bloque */
+  font-size: 18px; /* Tamaño de la fuente */
+  margin-top: 20px; /* Margen superior */
+  cursor: pointer; /* Cursor al pasar sobre el botón */
+  border-radius: 5px; /* Radio de borde */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+.add-to-cart-button:hover {
+  background-color: #45a049; /* Color de fondo al pasar el ratón */
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold; 
+  color: #2d922b; 
+  margin-bottom: 10px;
+}
+
+/* Media query para dispositivos de pantalla pequeña */
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Cambiar la dirección del flexbox a columna */
+  }
+
+  .gallery,
+  .details {
+    flex: none; /* Restablecer la flexibilidad a su valor predeterminado */
+    margin-right: 0; /* Eliminar el margen derecho */
+  }
+}

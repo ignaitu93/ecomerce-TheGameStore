@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/perfil.css" type="text/css" />
+
+
+  <title>User Profile</title>
+</head>
+<body>
+  <%- include('./partials/header') %>
+
+  <main class="user-profile" id="userProfile">
+    <h2>Perfil de <%= user.first_name %></h2>
+    <div class="user-info">
+        <div class="user-info-item">
+            <strong>Image:</strong> <img src="/img/<%= user.image %>" alt="Profile Image" class="profile-image">
+        </div>
+        <div class="user-info-item">
+            <strong>First Name:</strong> <%= user.first_name %>
+        </div>
+        <div class="user-info-item">
+            <strong>Last Name:</strong> <%= user.last_name %>
+        </div>
+        <div class="user-info-item">
+            <strong>Email:</strong> <%= user.email %>
+        </div>
+        <div class="user-info-item">
+            <strong>Rol:</strong>
+            <% if (user.rol_id === 1) { %>
+                Usuario
+            <% } else if (user.rol_id === 2) { %>
+                Admin
+            <% } %>
+        </div>
+    </div>
+    <a href="/auth/logout" class="logout-button">Logout</a>
+    <a href="/users/editar/<%= user.id %>" class="edit-profile-button">
+        <button>Editar</button>
+    </a>
+  </main>
+
+  <%- include('./partials/footer') %>
+</body>
+</html>

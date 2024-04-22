@@ -1,0 +1,50 @@
+<header class="contenedor">
+  <div id="top-header">
+    <div id="logo">
+      <a href="/">
+          <img src="/img/logo.png" alt="Logo de TheGameStore" />
+      </a>
+  </div>
+  <div id="search-bar">
+    <form action="/products/search" method="GET" class="search-form">
+      <input type="text" name="query" placeholder="Buscar productos..." class="search-input">
+      <button type="submit" class="search-button">Buscar</button>
+    </form>
+</div>
+   <div id="icons">
+      <a href="/users/perfil">
+        <img src="/img/usuario.png" alt="user" />
+        <span>usuario</span>
+      </a>
+      <a href="/contacts/create">
+        <img src="/img/burbuja-de-dialogo.png" alt="chat" />
+        <span>Contacto</span>
+      </a>
+      <a href="/cart">
+        <img src="/img/carrito-de-compras.png" alt="carrito-de-compras" />
+        <span>carrito</span>
+      </a>
+    </div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/products">Productos</a></li>
+      <li class="dropdown dropdown-horizontal">
+        <a href="#" class="dropbtn">Categorías</a>
+        <div class="dropdown-content">
+          <% categorias.forEach(categoria => { %>
+            <a href="/products/categoria/<%= categoria.id %>"><%= categoria.nombre %></a>
+          <% }); %>
+        </div>
+      </li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/contacts/create">Contacto</a></li>
+      <% if (isAdmin) { %>
+        <li><a href="/users/list">usuarios</a></li>
+        <li><a href="/products/list">lista de Productos</a></li>
+        <li><a href="/products/create">Nuevo producto</a></li>
+        <li><a href="http://localhost:5173/">Dash</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
